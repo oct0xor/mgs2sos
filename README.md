@@ -18,6 +18,9 @@ Most Metal Gear Solid 2 mods work by patching the game's code. The problem is th
 These `json` mod configs are stored in the `mods` folder. By default the `mgs2_hide_hud.json` mod is disabled, to enable it change the `enabled` value to `true`.
 Its also possible to change the sensitivity of the new camera by editing `mgs2_oct0xor.json` (the default value is `0.6`).
 
+## Binaries
+https://github.com/oct0xor/mgs2sos/releases
+
 ## Installation
 Unpack the `release.zip` archive to `\bin` folder and launch `solid_mods_loader.exe`.
 
