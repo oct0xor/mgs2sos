@@ -29,7 +29,7 @@ Its also possible to change the sensitivity of the new camera by editing `mgs2_o
 https://github.com/oct0xor/mgs2sos/releases
 
 ## Installation
-Unpack the `release.zip` archive to `\bin` folder and launch `solid_mods_loader.exe`.
+Unpack the contents of `release.zip` archive to `\bin` folder and launch `solid_mods_loader.exe`.
 
 ## How to build
 Visual Studio (2017 or others)
