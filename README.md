@@ -14,8 +14,15 @@ This project was difficult to complete, I previously posted a [dev diary](https:
 
 This repository contains the source code for the `mgs2_oct0xor` mod and the `solid_mods_loader` mod loader.
 
-Most Metal Gear Solid 2 mods work by patching the game's code. The problem is that everyone patches the game in its own way and it's hard to ensure compatibility between different mods. To improve this and prevent problems in a future I've decided to create a universal loader that loads libraries and applies patches with the help of special `json` files. I hope that more developers will start to use this universal loader for their own mods. I provide `json` files for the "The Substance Of Subsistence (S.O.S.)"  mod and the additional "Hide HUD elements" mod that I've used to record the [Trailer](https://www.youtube.com/watch?v=pPsGTdWGZLc). 
-These `json` mod configs are stored in the `mods` folder. By default the `mgs2_hide_hud.json` mod is disabled, to enable it change the `enabled` value to `true`.
+Most Metal Gear Solid 2 mods work by patching the game's code. The problem is that everyone patches the game in its own way and it's hard to ensure compatibility between different mods. 
+To improve this and prevent problems in a future I've decided to create a universal loader that loads libraries and applies patches with the help of special `json` files. 
+I hope that more developers will start to use this universal loader for their own mods. 
+
+I provide `json` files for the "The Substance Of Subsistence (S.O.S.)"  mod and the additional "Hide HUD elements" mod that I've used to record the [Trailer](https://www.youtube.com/watch?v=pPsGTdWGZLc). 
+These `json` mod configs are stored in the `mods` folder. 
+
+By default the `mgs2_hide_hud.json` mod is disabled, to enable it change the `enabled` value to `true`.
+
 Its also possible to change the sensitivity of the new camera by editing `mgs2_oct0xor.json` (the default value is `0.6`).
 
 ## Binaries
