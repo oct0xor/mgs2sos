@@ -1,0 +1,250 @@
+{
+	"name": "The Substance Of Subsistence (S.O.S.) mod by oct0xor",
+	"description": "This mod lets you play MGS2: Substance with the 3rd person camera from MGS3: Subsistence",
+	"patches": [
+
+		{
+			"type": "offset",
+			"address": "0x00883E8D",
+			"library": "mgs2_oct0xor.dll",
+			"export": "camera_handler",
+			"description": "Replace camera handler #1"
+		},
+		{
+			"type": "offset",
+			"address": "0x00884934",
+			"library": "mgs2_oct0xor.dll",
+			"export": "camera_handler",
+			"description": "Replace camera handler #2"
+		},
+		{
+			"type": "offset",
+			"address": "0x008849B9",
+			"library": "mgs2_oct0xor.dll",
+			"export": "camera_handler",
+			"description": "Replace camera handler #3"
+		},
+		{
+			"type": "call",
+			"address": "0x00884A2E",
+			"library": "mgs2_oct0xor.dll",
+			"export": "camera_handler",
+			"description": "Replace camera handler #4"
+		},
+
+		{
+			"type": "call",
+			"address": "0x004E7702",
+			"library": "mgs2_oct0xor.dll",
+			"export": "check_if_snake_is_next_to_wall_controls",
+			"description": "Fix player control direction"
+		},
+		{
+			"type": "call",
+			"address": "0x008CF1AA",
+			"library": "mgs2_oct0xor.dll",
+			"export": "convert_stick_to_button",
+			"description": "New gamepad controls"
+		},
+
+		{
+			"type": "call",
+			"address": "0x004BE585",
+			"library": "mgs2_oct0xor.dll",
+			"export": "check_if_snake_needs_to_jump",
+			"description": "Fix bug with wrong direction when player stands on object"
+		},
+
+		{
+			"type": "offset",
+			"address": "0x0087D9D4",
+			"library": "mgs2_oct0xor.dll",
+			"export": "camera_transitions_handler",
+			"description": "Replace camera transitions handler"
+		},
+
+		{
+			"type": "offset",
+			"address": "0x0099CA04",
+			"library": "mgs2_oct0xor.dll",
+			"export": "start_paddemo",
+			"description": ""
+		},
+		{
+			"type": "offset",
+			"address": "0x004C9798",
+			"library": "mgs2_oct0xor.dll",
+			"export": "paddemo_handler",
+			"description": ""
+		},
+
+		{
+			"type": "call",
+			"address": "0x004B05EF",
+			"library": "mgs2_oct0xor.dll",
+			"export": "diff_direction_for_swimming",
+			"description": "Swimming direction fix #1"
+		},
+		{
+			"type": "call",
+			"address": "0x004B05F8",
+			"library": "mgs2_oct0xor.dll",
+			"export": "pick_direction_for_swimming",
+			"description": "Swimming direction fix #2"
+		},
+
+		{
+			"type": "offset",
+			"address": "0x0099C32C",
+			"library": "mgs2_oct0xor.dll",
+			"export": "chara_func_0xDFADB",
+			"description": "Fix hidden objects"
+		},
+
+		{
+			"type": "call",
+			"address": "0x004EB239",
+			"library": "mgs2_oct0xor.dll",
+			"export": "get_camera_direction_fix_for_hanging",
+			"description": "Fix hanging direction #1"
+		},
+		{
+			"type": "call",
+			"address": "0x004EB242",
+			"library": "mgs2_oct0xor.dll",
+			"export": "diff_direction_for_hanging1",
+			"description": "Fix hanging direction #2"
+		},
+		{
+			"type": "call",
+			"address": "0x004EB253",
+			"library": "mgs2_oct0xor.dll",
+			"export": "diff_direction_for_hanging2",
+			"description": "Fix hanging direction #3"
+		},	
+
+		{
+			"type": "call",
+			"address": "0x004C2448",
+			"library": "mgs2_oct0xor.dll",
+			"export": "set_direction_for_PL_SubjectMove_wrap_with_set_stick_direction",
+			"description": "Fix Emma direction"
+		},
+
+		{
+			"type": "call",
+			"address": "0x004BA74D",
+			"library": "mgs2_oct0xor.dll",
+			"export": "is_rightstick_used",
+			"description": "New blade controls #1"
+		},
+		{
+			"type": "call",
+			"address": "0x004BA8EF",
+			"library": "mgs2_oct0xor.dll",
+			"export": "is_rightstick_used",
+			"description": "New blade controls #2"
+		},
+		{
+			"type": "call",
+			"address": "0x004BB764",
+			"library": "mgs2_oct0xor.dll",
+			"export": "is_rightstick_used",
+			"description": "New blade controls #3"
+		},
+		{
+			"type": "call",
+			"address": "0x004BC8B4",
+			"library": "mgs2_oct0xor.dll",
+			"export": "is_rightstick_used",
+			"description": "New blade controls #4"
+		},
+		{
+			"type": "call",
+			"address": "0x004BA9C8",
+			"library": "mgs2_oct0xor.dll",
+			"export": "get_blade_direction",
+			"description": "New blade controls #5"
+		},
+		{
+			"type": "call",
+			"address": "0x004BAD07",
+			"library": "mgs2_oct0xor.dll",
+			"export": "get_blade_direction",
+			"description": "New blade controls #6"
+		},
+		{
+			"type": "call",
+			"address": "0x004BAFDB",
+			"library": "mgs2_oct0xor.dll",
+			"export": "get_blade_direction",
+			"description": "New blade controls #7"
+		},
+		{
+			"type": "call",
+			"address": "0x004BB055",
+			"library": "mgs2_oct0xor.dll",
+			"export": "get_blade_direction",
+			"description": "New blade controls #8"
+		},
+		{
+			"type": "call",
+			"address": "0x004BB864",
+			"library": "mgs2_oct0xor.dll",
+			"export": "get_blade_direction",
+			"description": "New blade controls #9"
+		},
+		{
+			"type": "call",
+			"address": "0x004BC8DE",
+			"library": "mgs2_oct0xor.dll",
+			"export": "get_blade_direction",
+			"description": "New blade controls #10"
+		},
+		{
+			"type": "call",
+			"address": "0x004BA551",
+			"library": "mgs2_oct0xor.dll",
+			"export": "check_if_special_blade_attack",
+			"description": "New blade controls #11"
+		},
+
+		{
+			"type": "call",
+			"address": "0x004BBB65",
+			"library": "mgs2_oct0xor.dll",
+			"export": "diff_direction_for_blade_protection",
+			"description": "Fix blade protection stance #1"
+		},
+		{
+			"type": "bytes",
+			"address": "0x004BBB72",
+			"value": "9090",
+			"description": "Fix blade protection stance #2"
+		},
+		{
+			"type": "bytes",
+			"address": "0x004BBB74",
+			"value": "6689466A",
+			"description": "Fix blade protection stance #3"
+		},
+
+		{
+			"type": "call",
+			"address": "0x004E8B04",
+			"library": "mgs2_oct0xor.dll",
+			"export": "raiden_event_msg_motion",
+			"description": "Fix jump over obstacles"
+		},
+
+		{
+			"type": "float",
+			"library": "mgs2_oct0xor.dll",
+			"export": "Sensitivity",
+			"value": 0.6,
+			"description": "New camera sensitivity"
+		},
+
+	],
+	"enabled": true
+}

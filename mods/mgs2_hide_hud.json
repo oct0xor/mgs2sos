@@ -1,0 +1,57 @@
+{
+	"name": "Hide HUD elements",
+	"description": "Hide subtitles, radar, active weapon/item, life/grip bar, timer",
+	"patches": [
+
+		{
+			"type": "bytes",
+			"address": "0x0088BAED",
+			"value": "9090909090",
+			"description": "Hide captions"
+		},
+		{
+			"type": "bytes",
+			"address": "0x0084130F",
+			"value": "9090",
+			"description": "Hide radar"
+		},
+		{
+			"type": "bytes",
+			"address": "0x00424F6D",
+			"value": "9090909090",
+			"description": "Hide active weapon"
+		},
+		{
+			"type": "bytes",
+			"address": "0x0042634D",
+			"value": "9090909090",
+			"description": "Hide active item #1"
+		},
+		{
+			"type": "bytes",
+			"address": "0x0042657F",
+			"value": "9090909090",
+			"description": "Hide active item #2"
+		},
+		{
+			"type": "bytes",
+			"address": "0x004265B5",
+			"value": "9090909090",
+			"description": "Hide active item #3"
+		},
+		{
+			"type": "bytes",
+			"address": "0x004F0306",
+			"value": "E9DA000000",
+			"description": "Hide life/grip"
+		},
+		{
+			"type": "bytes",
+			"address": "0x004FF39B",
+			"value": "9090",
+			"description": "Hide timer"
+		},
+
+	],
+	"enabled": false
+}
