@@ -242,7 +242,21 @@
 			"library": "mgs2_oct0xor.dll",
 			"export": "Sensitivity",
 			"value": 0.6,
-			"description": "New camera sensitivity"
+			"description": "Option: new camera sensitivity"
+		},
+		{
+			"type": "bool",
+			"library": "mgs2_oct0xor.dll",
+			"export": "Invert_X",
+			"value": false,
+			"description": "Option: invert new camera (x-axis)"
+		},
+		{
+			"type": "bool",
+			"library": "mgs2_oct0xor.dll",
+			"export": "Invert_Y",
+			"value": false,
+			"description": "Option: invert new camera (y-axis)"
 		},
 
 	],

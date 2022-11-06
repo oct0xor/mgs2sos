@@ -22,8 +22,8 @@ I provide `json` files for the "The Substance Of Subsistence (S.O.S.)"  mod and 
 These `json` mod configs are stored in the `mods` folder. 
 
 By default the `mgs2_hide_hud.json` mod is disabled, to enable it change the `enabled` value to `true`.
-
-Its also possible to change the sensitivity of the new camera by editing `mgs2_oct0xor.json` (the default value is `0.6`).
+Don't try to change the "patches" if you don't know what you are doing - this is an instruction for the loader so that it knows what needs to be changed in the game's memory.
+For `mgs2_oct0xor.json` its allowed to change `Sensitivity` (the default value is `0.6`), `Invert_X` (the default value is `false`, can be change to `true`) and `Invert_Y` (the default value is `false`, can be change to `true`).
 
 ## Binaries
 https://github.com/oct0xor/mgs2sos/releases

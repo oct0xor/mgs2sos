@@ -320,6 +320,8 @@ bool BladeSpecialAttack = false;
 WORD BladeDirection = 0;
 
 extern "C" __declspec(dllexport) float Sensitivity = (float)0.6; // 1.3333334
+extern "C" __declspec(dllexport) BYTE Invert_X = FALSE;
+extern "C" __declspec(dllexport) BYTE Invert_Y = FALSE;
 
 void osd_message(const char* format, ...)
 {
@@ -726,9 +728,18 @@ void convert_rightstick_data(NEW_TPS_CAMERA* ws)
 	BYTE rx = *Rightstick_X;
 	BYTE ry = *Rightstick_Y;
 
-	// Invert...
 	rx = ~rx;
 	ry = ~ry;
+
+	if (Invert_X)
+	{
+		rx = ~rx;
+	}
+
+	if (Invert_Y)
+	{
+		ry = ~ry;
+	}
 
 	int rx_ = rx - 0x80;
 	int ry_ = ry - 0x80;

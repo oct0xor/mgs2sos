@@ -15,11 +15,9 @@ std::string mods_folder;
 
 std::vector<std::string*> config_names;
 
-std::string patch_types[] = { "offset", "call", "jmp", "bytes", "float" };
+std::string patch_types[] = { "offset", "call", "jmp", "bytes", "float", "bool" };
 
 std::unordered_map<std::string, DWORD> loaded_modules;
-
-bool debug = false;
 
 void start_process(char* executable)
 {
@@ -63,7 +61,7 @@ DWORD load_dll(HANDLE handle, const char* path)
 	return dll_base;
 }
 
-DWORD load_dll_if_not_loaded(HANDLE handle, const char* path)
+DWORD load_dll_if_not_loaded(HANDLE handle, const char* path, bool debug)
 {
 	DWORD dll_base = NULL;
 
@@ -172,6 +170,13 @@ void load_mods(HANDLE handle)
 		const Json::Value description_value = root["description"];
 		const Json::Value enabled_value = root["enabled"];
 
+		bool debug = false;
+		const Json::Value debug_value = root["debug"];
+		if (debug_value.isBool())
+		{
+			debug = debug_value.asBool();
+		}
+
 		if (name_value.isNull() || description_value.isNull() || enabled_value.isNull())
 		{
 			printf("Error! Missing name/description/enabled value(s)!\n");
@@ -223,7 +228,10 @@ void load_mods(HANDLE handle)
 			DWORD address = NULL;
 			if (address_value.isNull())
 			{
-				if (strcmp(type.c_str(), "bytes") == 0 || strcmp(type.c_str(), "float") == 0)
+				if (strcmp(type.c_str(), "bytes") == 0
+					|| strcmp(type.c_str(), "float") == 0
+					|| strcmp(type.c_str(), "bool") == 0
+					)
 				{
 					const Json::Value library_value = patch["library"];
 					const Json::Value export_value = patch["export"];
@@ -237,7 +245,7 @@ void load_mods(HANDLE handle)
 
 					const std::string library_name = library_value.asString();
 					std::string dll_path = std::string(mods_folder + library_name);
-					load_dll_if_not_loaded(handle, dll_path.c_str());
+					load_dll_if_not_loaded(handle, dll_path.c_str(), debug);
 					HMODULE library = LoadLibrary(dll_path.c_str());
 
 					address = (DWORD)GetProcAddress(library, export_value.asCString());
@@ -277,7 +285,7 @@ void load_mods(HANDLE handle)
 
 				const std::string library_name = library_value.asString();
 				std::string dll_path = std::string(mods_folder + library_name);
-				load_dll_if_not_loaded(handle, dll_path.c_str());
+				load_dll_if_not_loaded(handle, dll_path.c_str(), debug);
 				HMODULE library = LoadLibrary(dll_path.c_str());
 
 				BYTE offset[4];
@@ -304,7 +312,7 @@ void load_mods(HANDLE handle)
 
 				const std::string library_name = library_value.asString();
 				std::string dll_path = std::string(mods_folder + library_name);
-				load_dll_if_not_loaded(handle, dll_path.c_str());
+				load_dll_if_not_loaded(handle, dll_path.c_str(), debug);
 				HMODULE library = LoadLibrary(dll_path.c_str());
 
 				DWORD target = install_hook(handle, library, address, export_value.asCString());
@@ -328,7 +336,7 @@ void load_mods(HANDLE handle)
 
 				const std::string library_name = library_value.asString();
 				std::string dll_path = std::string(mods_folder + library_name);
-				load_dll_if_not_loaded(handle, dll_path.c_str());
+				load_dll_if_not_loaded(handle, dll_path.c_str(), debug);
 				HMODULE library = LoadLibrary(dll_path.c_str());
 
 				DWORD target = install_hook(handle, library, address, export_value.asCString(), true);
@@ -392,6 +400,26 @@ void load_mods(HANDLE handle)
 					printf("\t\tPatch (float):  Address 0x%X, Dword 0x%X\n", address, data);
 				}
 			}
+			else if (strcmp(type.c_str(), "bool") == 0)
+			{
+				const Json::Value bool_value = patch["value"];
+
+				if (bool_value.isNull())
+				{
+					printf("\t-> Error! \"bool\" patch type without value!\n");
+					flag = true;
+					break;
+				}
+
+				BYTE data = (BYTE)bool_value.asBool();
+
+				WriteProcessMemory(handle, (LPVOID)address, &data, sizeof(data), NULL);
+
+				if (debug)
+				{
+					printf("\t\tPatch (bool):  Address 0x%X, Byte 0x%X\n", address, data);
+				}
+			}
 		}
 			
 		if (flag)
@@ -405,7 +433,7 @@ void load_mods(HANDLE handle)
 int main()
 {
 	printf("--= Solid Mods Loader by oct0xor =--\n\n");
-	printf("Version: 1.0\n");
+	printf("Version: 1.1\n");
 
 	get_mods_folder();
 
