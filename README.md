@@ -10,6 +10,21 @@ The code to have a normal 3rd person camera was never present in the game, and i
 
 This project was difficult to complete, I previously posted a [dev diary](https://www.youtube.com/watch?v=AGGNfOq8u3o) where I talked about some of the issues I encountered (although after this video I had to fix many more issues).
 
+## Videos from players
+
+[MGS2 in 3RD PERSON? | Metal Gear Solid 2: Substance Mod Stream](https://www.twitch.tv/videos/1644688663)
+[Metal Gear Solid 2 w/ Third Person Camera Mod! - Nov 6th 2022 stream](https://www.youtube.com/watch?v=v-tAsAWJKKM)
+[PLAYING Metal Gear Solid 2 In Third Person Mod!](https://www.youtube.com/watch?v=eHjr_anX88Q)
+[You NEVER Saw MGS2 Like This!](https://www.youtube.com/watch?v=AsfYTE4hpE8)
+[MGS2 with 3d camera mod](https://www.youtube.com/watch?v=85ivZOQ2DGc)
+[METAL GEAR SOLID 2 - ( SOS ) part 1](https://www.youtube.com/watch?v=a1FZfvWOY_E)
+[MGS2: Substance of Subsistence is pretty fun](https://www.youtube.com/watch?v=iyrqwsZsuWg)
+[MGS2 oct0xor's 3rd Person Mod - Snake Tales Edition](https://www.youtube.com/watch?v=QwvqFLt-Dkc)
+[Metal Gear Solid 2 Substance Third Person Mod Gameplay](https://www.youtube.com/watch?v=dsX0blTZp9g)
+[This mod is changes the game! Battle Check: Metal Gear Solid 2 - The Substance Of Subsistence](https://www.youtube.com/watch?v=ocdxJc1xmmI)
+[MGS2: Substance of Subsistence MOD! | THIRD PERSON MOD](https://www.youtube.com/watch?v=GFd1GhcHdYU)
+[Metal Gear Solid 2: Substance | Full Tanker Chapter w/ Third Person Camera Mod! (S.O.S.) Mod](https://www.youtube.com/watch?v=4cOWJgSAVJE)
+
 ## Repository overview
 
 This repository contains the source code for the `mgs2_oct0xor` mod and the `solid_mods_loader` mod loader.
