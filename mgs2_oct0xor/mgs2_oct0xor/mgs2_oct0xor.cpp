@@ -32,8 +32,8 @@ typedef void(__cdecl* func24)(int arg0, int arg1, int arg2, int arg3, int arg4);
 typedef void(__cdecl* func25)(int arg0, void* arg1);
 typedef int(__cdecl* func26)();
 typedef int(__cdecl* func27)(int arg0, void** arg1);
-typedef void(__cdecl* func28)(void *a1, int a2, int a3);
-typedef void(__cdecl* func29)(void *a1, int a2, int a3, int a4);
+typedef void(__cdecl* func28)(void *arg0, int arg1, int arg2);
+typedef void(__cdecl* func29)(void *arg0, int arg1, int arg2, int arg3);
 typedef int(__cdecl* func30)(float *arg0, float *arg1);
 typedef void(__cdecl* func31)(float *arg0, float *arg1, float arg2, int arg3);
 typedef int(__cdecl* func32)(float *arg0, float *arg1, float *arg2, float *arg3, float *arg4);
@@ -1403,7 +1403,7 @@ CAMERA_MGS2_PC* find_next_camera(CAMERA_CHANNEL_MGS2_PC *channel, int *some_coun
 		if (next_camera == channel->next && next_camera->interpolate_id == 2)
 			return next_camera;
 
-		if (is_patchable_camera(next_camera))
+		if (next_camera->channel_id == 0 && is_patchable_camera(next_camera))
 		{
 			CAMERA_MGS2_PC* tps_camera = find_camera_by_id(TPS_CAMERA_ID, 0);
 
@@ -1483,7 +1483,7 @@ CAMERA_MGS2_PC* find_next_camera(CAMERA_CHANNEL_MGS2_PC *channel, int *some_coun
 	{
 		next_camera = channel->next;
 
-		if (is_patchable_camera(next_camera))
+		if (next_camera->channel_id == 0 && is_patchable_camera(next_camera))
 		{
 			CAMERA_MGS2_PC* tps_camera = find_camera_by_id(TPS_CAMERA_ID, 0);
 
