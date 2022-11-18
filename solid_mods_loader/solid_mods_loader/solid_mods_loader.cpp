@@ -433,7 +433,7 @@ void load_mods(HANDLE handle)
 int main()
 {
 	printf("--= Solid Mods Loader by oct0xor =--\n\n");
-	printf("Version: 1.2\n");
+	printf("Version: 1.3\n");
 
 	get_mods_folder();
 

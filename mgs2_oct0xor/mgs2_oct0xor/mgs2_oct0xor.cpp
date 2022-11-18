@@ -1345,7 +1345,7 @@ extern "C" __declspec(dllexport) void __cdecl convert_stick_to_button(void* arg0
 
 	PrevButtons = buttons;
 
-	if (IsEnabled)
+	if (IsEnabled && !IsPaddemo)
 	{
 		*(DWORD*)0xEDAE78 = 0; // camera_direction_fix
 	}
